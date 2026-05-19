@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De Trends Uitgewerkt — Traineeschip Visie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #2E7D32;
+    --green-dark: #1B5E20;
+    --green-pale: #E8F5E9;
+    --blue: #1A4A7A;
+    --blue-pale: #E8F0FB;
+    --amber: #7B5C00;
+    --amber-pale: #FFF8E1;
+    --ink: #1a1a18;
+    --ink-mid: #4a4a45;
+    --ink-soft: #8a8a82;
+    --paper: #f5f5f2;
+    --white: #ffffff;
+    --border: #e0dfd8;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(245,245,242,0.93);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    height: 58px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px; color: var(--green);
+    text-decoration: none;
+  }
+  .nav-label {
+    font-size: 11px; font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 72px 24px 48px;
+  }
+  .hero-eyebrow {
+    font-size: 11px; font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .hero h1 em { color: var(--green); font-style: italic; }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill {
+    display: inline-flex; align-items: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px; font-weight: 500;
+  }
+  .pill-green { background: var(--green-pale); color: var(--green-dark); }
+  .pill-blue  { background: var(--blue-pale);  color: var(--blue); }
+  .pill-amber { background: var(--amber-pale); color: var(--amber); }
+
+  hr { border: none; border-top: 1px solid var(--border); }
+
+  .content {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  .trend-section { padding: 56px 0 0; }
+
+  .trend-header {
+    display: flex; align-items: flex-start; gap: 20px;
+    margin-bottom: 28px;
+  }
+  .trend-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px; line-height: 1;
+    color: var(--border);
+    flex-shrink: 0; margin-top: -4px;
+  }
+  .section-label {
+    font-size: 11px; font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .trend-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px; line-height: 1.2;
+    color: var(--ink);
+  }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 16px;
+  }
+  .card-label {
+    font-size: 11px; font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .bullet-list { list-style: none; }
+  .bullet-list li {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink-mid); font-size: 15px;
+  }
+  .bullet-list li:last-child { border-bottom: none; }
+  .bullet-list li::before {
+    content: "→"; color: var(--green);
+    font-weight: 500; flex-shrink: 0; margin-top: 1px;
+  }
+  .bullet-list li strong { color: var(--ink); }
+  .bullet-sub {
+    display: block; margin-top: 4px;
+    color: var(--ink-soft); font-size: 14px;
+  }
+
+  .card-quote {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--green);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .card-quote p { color: var(--ink-mid); font-size: 15px; line-height: 1.7; }
+  .card-quote p + p { margin-top: 12px; }
+
+  .trend-divider { border-top: 1px solid var(--border); margin: 56px 0 0; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--ink-soft);
+    max-width: 780px; margin: 0 auto;
+  }
+  footer a { color: var(--green); text-decoration: none; font-weight: 500; }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 20px; }
+    footer { flex-direction: column; gap: 8px; text-align: center; padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">Traineeschip</a>
+  <span class="nav-label">De trends uitgewerkt</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Onderbouwing · Arbeidsmarkt 2025</div>
+  <h1>De trends<br><em>uitgewerkt</em></h1>
+  <div class="hero-pills">
+    <span class="pill pill-blue">Gen Z</span>
+    <span class="pill pill-green">AI &amp; Digitalisering</span>
+    <span class="pill pill-amber">Regelgeving &amp; Complexiteit</span>
+  </div>
+</div>
+
+<hr>
+
+<div class="content">
+
+  <!-- TREND 1: GEN Z -->
+  <div class="trend-section">
+    <div class="trend-header">
+      <div class="trend-number">01</div>
+      <div>
+        <div class="section-label">Trend één</div>
+        <div class="trend-title">Gen Z</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Kernpunten</div>
+      <ul class="bullet-list">
+        <li>Groepen acteren – collectiviteit – samen sterk</li>
+        <li><strong>Doel / purpose / ontwikkeling – zelf groeien</strong></li>
+        <li>Bereidheid op langdurig opleiden neemt af</li>
+        <li><strong>Behoefte aan autonomie – zelf aan het stuur</strong></li>
+        <li>Competenties op volhouden steeds lager</li>
+        <li><strong>Mentale gezondheid / Duurzame inzetbaarheid</strong></li>
+        <li><strong>Kracht van het netwerk – belangrijk</strong></li>
+      </ul>
+    </div>
+
+    <div class="card-quote">
+      <p>Gen Z op de arbeidsmarkt zijn flexibel, ze zijn minder loyaal aan een werkgever en meer aan hun eigen carrière en ontwikkeling. Ze willen impact maken, meer dan dat ze waarde hechten aan een specifieke baan. Zij zijn meer bestendig voor een wereld met onzekerheid en zijn daarom ook meer bereid om onzekerheid in hun loopbaan te aanvaarden.</p>
+      <p>Ze zijn autonoom, bereid nieuwe ontwikkelingen toe te passen en te experimenteren met nieuwe manieren van doen. Hun drang naar doel komt naar voren in hun autonomie, hun wil om gezamenlijk dingen aan te pakken, en hun grote wil om te groeien in hun carrière. Wat wij hun aanbieden is een netwerk om in contact te komen met bedrijven en medeprofessionals die ze kunnen helpen in deze doelen. Daarnaast kunnen wij hun een groeipad aanbieden waarin zij zichzelf kunnen bewijzen en direct waarde kunnen toevoegen terwijl ze zelf nog groeien in een richting waarin ze talent hebben.</p>
+    </div>
+  </div>
+
+  <hr class="trend-divider">
+
+  <!-- TREND 2: AI / DIGITALISERING -->
+  <div class="trend-section">
+    <div class="trend-header">
+      <div class="trend-number">02</div>
+      <div>
+        <div class="section-label">Trend twee</div>
+        <div class="trend-title">AI &amp; Digitalisering</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Kernpunten</div>
+      <ul class="bullet-list">
+        <li>Schaarste salarisadm.</li>
+        <li><strong>Technologie belangrijker</strong></li>
+        <li><strong>Data gedreven</strong></li>
+        <li>Cultuur in de driehoek is conservatief en terughoudend tegenover vernieuwing door compliance en type mens</li>
+        <li>Power BI nodig in HR</li>
+        <li>Geïntegreerde oplossingen</li>
+      </ul>
+    </div>
+
+    <div class="card-quote">
+      <p>De opkomst van nieuwe technologieën binnen de driehoek, zoals AI, maar ook in dataprogramma's en programma's zoals NMBRS die je gebruikt in het vak, zorgen voor een nieuwe kans voor trainees omdat het vak nieuwe vaardigheden nodig heeft en op zoek is naar een manier om te innoveren om de concurrentie voor te blijven. Dataverzameling en andere analyses worden een groter en belangrijker deel van het vak.</p>
+      <p>Ook zorgt deze opkomst dat nieuwe technieken en nieuwe onboardingprocessen beschikbaar worden die zorgen dat je mensen op een andere manier kan opleiden in het vakgebied. Dit zorgt dat bijvoorbeeld het LMS van een veel hogere kwaliteit kan zijn dan voorheen en dat we nieuw kunnen gaan nadenken over het profiel van een medewerker, omdat de techniek dit proces heeft vereenvoudigd. We gaan deze richting in omdat de schaarste op de markt steeds meer wordt opgelost via deze technieken, mede door de wetgeving en het risico met werknemers, maar ook omdat het nieuwe mogelijkheden geeft aan de werkgever.</p>
+    </div>
+  </div>
+
+  <hr class="trend-divider">
+
+  <!-- TREND 3: REGELGEVING / COMPLEXITEIT -->
+  <div class="trend-section">
+    <div class="trend-header">
+      <div class="trend-number">03</div>
+      <div>
+        <div class="section-label">Trend drie</div>
+        <div class="trend-title">Regelgeving &amp; Complexiteit</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Kernpunten</div>
+      <ul class="bullet-list">
+        <li>
+          <strong>Sterke focus op compliance / regelgeving</strong>
+          <span class="bullet-sub">– Duurzaamheid &nbsp;&nbsp;– Loonstransparantie</span>
+        </li>
+        <li>Wet allocatie arbeidskrachten door intermediairs (WAADI)</li>
+        <li>Payroll → outsourcen</li>
+        <li>Lastig overtuigen van opdrachtgever op talent, groter risico</li>
+        <li>Schaarste salarisadm.</li>
+        <li>Ontgroening op arbeidsmarkt</li>
+      </ul>
+    </div>
+
+    <div class="card-quote">
+      <p>De wetgeving voor detachering is complex en zorgt voor wrijving bij het accepteren en aanbieden van trainees. De Wet allocatie arbeidskrachten door intermediairs (WAADI) zorgt dat veel informatie moet worden gedeeld tussen detacheerders en opdrachtgevers. Alles moet transparant zijn en er is veel werk voor het HR van Tilstra om dit goed te regelen.</p>
+      <p>Ook is het vakgebied risicovol voor opdrachtgevers, omdat een fout of achterstallige salarisadministratie tot veel financieel leed kan leiden. Hierom is expertise van grote waarde in het vakgebied en zijn opdrachtgevers minder snel bereid een kans te geven aan een relatief onervaren administrateur. Deze complexiteit van het vakgebied en de regelgeving zorgt dat minder opdrachtgevers bereid zijn om een kans te wagen. Het is dus belangrijk dat we onderstrepen dat ons programma de risico's waard is.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span>Tilstra Services — Traineeschip Visie 2025</span>
+  <a href="../index.html">← Terug naar overzicht</a>
+</footer>
+
+</body>
+</html>
